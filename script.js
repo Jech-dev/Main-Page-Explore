@@ -27,3 +27,30 @@ sidebarItems.forEach(sideItem =>{
     sideItem.classList.add('active');
   });
 });
+
+
+//category in the middle
+
+catItems.forEach(catItem =>{
+  catItem.addEventListener('click', () =>{
+    catItems.forEach(item =>{
+      item.classList.remove('active');
+    });
+    catItem.classList.add('active');
+  });
+});
+
+
+// move sidebar with small device screen
+
+window.addEventListener('scroll', () =>{
+  if (window.innerWidth <= 992){
+    if(this.pageYOffset > 20){
+      sidebar.style.paddingTop = '20px';
+    }else{
+      sidebar.style.paddingTop = '70px';
+    }
+  }
+
+});
+
